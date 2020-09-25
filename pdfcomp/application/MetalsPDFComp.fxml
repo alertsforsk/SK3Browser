@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="905.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <VBox layoutX="6.0" layoutY="95.0" prefHeight="729.0" prefWidth="568.0">
+         <children>
+            <TableView fx:id="leftTable" onDragDropped="#handleDropLeft" onDragOver="#handleDragOver" prefHeight="796.0" prefWidth="568.0">
+              <columns>
+                <TableColumn fx:id="leftFileName" prefWidth="286.0" text="FileName" />
+                  <TableColumn fx:id="leftFileSize" prefWidth="267.0" text="FileSize" />
+                  <TableColumn fx:id="leftFileModified" prefWidth="122.0" text="DateModified" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox layoutX="581.0" layoutY="95.0" prefHeight="729.0" prefWidth="590.0">
+         <children>
+            <VBox prefHeight="732.0" prefWidth="590.0">
+               <children>
+                  <TableView fx:id="rightTable" onDragDropped="#handleDropRightt" onDragOver="#handleDragOver" prefHeight="796.0" prefWidth="568.0">
+                     <columns>
+                        <TableColumn fx:id="rightFileName" prefWidth="286.0" text="FileName" />
+                        <TableColumn fx:id="rightFileSize" prefWidth="267.0" text="FileSize" />
+                        <TableColumn fx:id="rightFileModified" prefWidth="122.0" text="DateModified" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <TextField fx:id="ruleFile" layoutX="124.0" layoutY="28.0" prefHeight="25.0" prefWidth="419.0" />
+      <TextField fx:id="resultFolder" layoutX="124.0" layoutY="63.0" prefHeight="25.0" prefWidth="419.0" />
+      <Text layoutX="7.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compare Rule File" wrappingWidth="137.26760283112526" />
+      <Text layoutX="7.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difference Output" wrappingWidth="137.267578125" />
+      <Button fx:id="pickRuleFile" layoutX="547.0" layoutY="28.0" mnemonicParsing="false" onAction="#handeRuleFileSelect" text="..." />
+      <Button fx:id="pickResultFolder" layoutX="547.0" layoutY="63.0" mnemonicParsing="false" onAction="#handeFolderSelect" prefHeight="25.0" prefWidth="24.0" text="Button" />
+      <Button fx:id="startButton" layoutX="581.0" layoutY="63.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Start Compare" />
+      <Text layoutX="582.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Mask Char" wrappingWidth="106.9999955156818" />
+      <TextField fx:id="mask" layoutX="710.0" layoutY="26.0" prefHeight="25.0" prefWidth="50.0" />
+      <ListView fx:id="console" layoutX="7.0" layoutY="825.0" prefHeight="78.0" prefWidth="1167.0" />
+   </children>
+</AnchorPane>
