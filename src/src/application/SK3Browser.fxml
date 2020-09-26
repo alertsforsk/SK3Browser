@@ -4,11 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -21,60 +17,22 @@
 
 <VBox prefHeight="907.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="File">
-          <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-          <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
       <SplitPane orientation="VERTICAL" prefHeight="890.0" prefWidth="1223.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="622.0" prefWidth="1221.0">
+                  <SplitPane dividerPositions="0.19606234618539786" prefHeight="689.0" prefWidth="1221.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="624.0" prefWidth="360.0">
                            <children>
-                              <ListView fx:id="buckets" layoutX="2.0" onMouseClicked="#bucketListSelect" prefHeight="620.0" prefWidth="360.0" />
+                              <ListView fx:id="buckets" layoutX="2.0" layoutY="56.0" onMouseClicked="#bucketListSelect" prefHeight="624.0" prefWidth="230.0" />
+                              <Button fx:id="connect" layoutX="3.0" layoutY="15.0" mnemonicParsing="false" onAction="#connect" prefHeight="25.0" prefWidth="91.0" text="Connect" />
                            </children>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="853.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="661.0" prefWidth="977.0">
                            <children>
-                              <TextField fx:id="folderField" layoutX="8.0" layoutY="14.0" onAction="#processFolder" prefHeight="25.0" prefWidth="703.0" />
-                              <TableView fx:id="objects" layoutY="56.0" onDragDropped="#handleDrop" onDragOver="#handleDragOver" onMouseClicked="#listFolder" prefHeight="533.0" prefWidth="853.0">
+                              <TextField fx:id="folderField" layoutX="128.0" layoutY="14.0" onAction="#processFolder" prefHeight="25.0" prefWidth="686.0" />
+                              <TableView fx:id="objects" layoutY="56.0" onDragDropped="#handleDrop" onDragOver="#handleDragOver" onMouseClicked="#listFolder" prefHeight="585.0" prefWidth="977.0">
                                 <columns>
                                   <TableColumn fx:id="fileName" prefWidth="300.0" text="File" />
                                   <TableColumn fx:id="fileSize" prefWidth="75.0" text="Size" />
@@ -83,25 +41,23 @@
                                   <TableColumn fx:id="fileStorageClass" prefWidth="150.0" text="Storage Class" />
                                 </columns>
                               </TableView>
-                              <Button fx:id="connect" layoutX="6.0" layoutY="593.0" mnemonicParsing="false" onAction="#connect" prefHeight="25.0" prefWidth="71.0" text="Connect" />
-                              <Button fx:id="upload" layoutX="121.0" layoutY="593.0" mnemonicParsing="false" onAction="#fileChooser" prefHeight="25.0" prefWidth="71.0" text="Upload" />
-                              <Button fx:id="download" layoutX="205.0" layoutY="593.0" mnemonicParsing="false" text="Download" />
-                              <Button fx:id="view" layoutX="285.0" layoutY="592.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="View" />
-                              <TextField fx:id="maxKeys" layoutX="652.0" layoutY="591.0" prefHeight="25.0" prefWidth="52.0" text="100" />
-                              <Button fx:id="prev" disable="true" layoutX="710.0" layoutY="590.0" mnemonicParsing="false" onAction="#PrevPage" prefHeight="25.0" prefWidth="64.0" text="Prev" />
-                              <Button fx:id="next" disable="true" layoutX="780.0" layoutY="588.0" mnemonicParsing="false" onAction="#NextPage" prefHeight="25.0" prefWidth="64.0" text="Next" />
+                              <TextField fx:id="maxKeys" layoutX="762.0" layoutY="648.0" prefHeight="25.0" prefWidth="52.0" text="100" />
+                              <Button fx:id="prev" disable="true" layoutX="831.0" layoutY="648.0" mnemonicParsing="false" onAction="#PrevPage" prefHeight="25.0" prefWidth="64.0" text="&lt;" />
+                              <Button fx:id="next" disable="true" layoutX="899.0" layoutY="648.0" mnemonicParsing="false" onAction="#NextPage" prefHeight="25.0" prefWidth="64.0" text="&gt;" />
+                              <Label layoutX="14.0" layoutY="18.0" prefHeight="17.0" prefWidth="91.0" text="Folder/Search" />
+                              <Label layoutX="640.0" layoutY="652.0" prefHeight="17.0" prefWidth="112.0" text="Max Row Display" />
                            </children>
                         </AnchorPane>
                     </items>
                   </SplitPane>
                   <Accordion layoutX="14.0" layoutY="490.0" />
-                  <TabPane layoutX="4.0" layoutY="623.0" prefHeight="261.0" prefWidth="1215.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane layoutX="4.0" layoutY="697.0" prefHeight="187.0" prefWidth="1215.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                         <Tab text="Upload Console">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ListView fx:id="consoleListView" layoutY="23.0" prefHeight="202.0" prefWidth="1122.0" />
+                                    <ListView fx:id="consoleListView" layoutY="12.0" prefHeight="202.0" prefWidth="1122.0" />
                                     <Button fx:id="pauseButton" disable="true" layoutX="1135.0" layoutY="8.0" mnemonicParsing="false" onAction="#pauseUpload" prefHeight="25.0" prefWidth="64.0" text="Pause" />
                                     <Button fx:id="resumeButton" disable="true" layoutX="1136.0" layoutY="43.0" mnemonicParsing="false" onAction="#resumeUpload" prefHeight="25.0" prefWidth="64.0" text="Resume" />
                                     <Label fx:id="counterLabel" layoutX="1136.0" layoutY="193.0" prefHeight="25.0" prefWidth="64.0" />
